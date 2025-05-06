@@ -1,11 +1,6 @@
-# k8s-observability-stack
-A Kubernetes observability stack using Prometheus, Grafana, Jaeger, and Fluent Bit for monitoring, logging, and tracing.
 Here's a sample README.md file that you can use to document the setup of the Kubernetes Observability Stack:
 
-README.md
-markdown
-Copy
-Edit
+
 # Kubernetes Observability Stack
 
 This repository contains the setup for a comprehensive Kubernetes Observability Stack using **Prometheus**, **Grafana**, **Jaeger**, and **Fluent Bit**. It includes Helm charts for each component, which are configured to work together to monitor and trace your Kubernetes clusters effectively.
@@ -59,9 +54,7 @@ Deployment Instructions
 Follow these steps to deploy the observability stack on your Kubernetes cluster.
 
 1. Clone this Repository
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/k8s-observability-stack.git
 cd k8s-observability-stack
 2. Install Helm (If not installed)
@@ -73,9 +66,7 @@ Before deploying, you can modify the values.yaml file to adjust resource limits,
 4. Deploy the Observability Stack
 You can deploy the entire stack by running the following script, which installs Prometheus, Grafana, Jaeger, and Fluent Bit:
 
-bash
-Copy
-Edit
+
 ./scripts/deploy.sh
 This script will:
 
@@ -101,9 +92,7 @@ You can also expose these services externally using kubectl port-forward or conf
 6. Clean Up
 To remove the entire observability stack, you can run:
 
-bash
-Copy
-Edit
+
 helm uninstall prometheus --namespace observability
 helm uninstall grafana --namespace observability
 helm uninstall jaeger --namespace observability
@@ -118,9 +107,7 @@ Jaeger provides distributed tracing for monitoring microservices.
 8. Troubleshooting
 If you encounter any issues during deployment, you can check the logs of individual pods using:
 
-bash
-Copy
-Edit
+
 kubectl logs <pod-name> -n observability
 For more advanced troubleshooting, check the Helm chart documentation for each tool or refer to the logs of the corresponding Kubernetes pods.
 
@@ -129,9 +116,7 @@ With this Kubernetes Observability Stack, you can easily monitor and visualize t
 
 Feel free to customize the configuration and expand this stack based on your specific needs.
 
-vbnet
-Copy
-Edit
+
 
 ---
 
@@ -147,7 +132,6 @@ Edit
 8. **Troubleshooting**: Guidance on troubleshooting if anything goes wrong during deployment.
 
 This README should provide clear instructions for both setup and ongoing usage. You can also expand it with more details as you add more features to the observability stack.
-
 
 
 
