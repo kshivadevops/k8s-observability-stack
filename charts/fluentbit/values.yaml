@@ -1,0 +1,9 @@
+# fluentbit/values.yaml
+
+backend:
+  type: es
+  es:
+    host: elasticsearch-master
+    port: 9200
+    index: fluentbit
+

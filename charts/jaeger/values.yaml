@@ -1,0 +1,17 @@
+# jaeger/values.yaml
+
+agent:
+  enabled: true
+  ports:
+    - port: 5775
+      protocol: UDP
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+collector:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      url: http://elasticsearch-master:9200
+

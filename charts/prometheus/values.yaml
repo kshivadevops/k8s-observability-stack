@@ -1,0 +1,22 @@
+# prometheus/values.yaml
+
+server:
+  global:
+    scrape_interval: 15s
+  storageSpec:
+    volumeClaimTemplate:
+      spec:
+        resources:
+          requests:
+            storage: 10Gi
+  alerting:
+    alertmanagers:
+      - namespace: observability
+        name: alertmanager-operated
+        port: 9093
+  additionalScrapeConfigs:
+    - job_name: 'fluentbit'
+      static_configs:
+        - targets: ['fluentbit:2020']
+  retention: 30d
+

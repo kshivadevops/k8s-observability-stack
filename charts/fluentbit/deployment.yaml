@@ -1,0 +1,30 @@
+# fluentbit/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fluentbit
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fluentbit
+  template:
+    metadata:
+      labels:
+        app: fluentbit
+    spec:
+      containers:
+        - name: fluentbit
+          image: fluent/fluent-bit:1.8
+          ports:
+            - containerPort: 2020
+          volumeMounts:
+            - name: fluentbit-config
+              mountPath: /fluent-bit/etc/
+      volumes:
+        - name: fluentbit-config
+          configMap:
+            name: fluentbit-config
+
